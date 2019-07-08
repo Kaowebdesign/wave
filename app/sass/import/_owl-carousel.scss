@@ -1,0 +1,26 @@
+.owl-carousel .owl-stage-outer{
+    padding: 25px 0;
+}
+#slider-one .owl-stage .active:first-child,
+#slider-three .owl-stage .active:first-child,
+#slider-five .owl-stage .active:first-child{
+    display: flex;
+    justify-content: flex-start;
+}
+#slider-three .owl-stage .active:last-child,
+#slider-five .owl-stage .active:last-child{
+    display: flex;
+    justify-content: flex-end;
+}
+#slider-two .owl-stage-outer,
+#slider-five .owl-stage-outer{
+    padding: 0;
+}
+#slider-three .owl-item img{
+    display: initial;
+    width: auto;
+}
+
+#slider-one .owl-stage-outer{
+    padding: 15px 0;
+}

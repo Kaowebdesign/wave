@@ -1,0 +1,38 @@
+@charset "utf-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Cabin-Regular;
+    /* Гарнитура шрифта */
+    src: url(fonts/Cabin-Regular.ttf);
+    /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Cabin-Bold;
+    /* Гарнитура шрифта */
+    src: url(fonts/Cabin-Bold.ttf);
+    /* Путь к файлу со шрифтом */
+}
+
+body {
+    @extend %baseRegular;
+    min-width: 320px;
+    scroll-behavior: smooth;
+}
+
+@import "import/vars";
+@import "import/mixins";
+@import "import/header";
+@import "import/main";
+@import "import/footer";
+@import "import/template";
+@import "import/parallax";
+@import "import/animation";
+@import "import/media";
+@import "import/owl-carousel";

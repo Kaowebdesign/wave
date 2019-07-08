@@ -1,0 +1,82 @@
+.bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -100;
+    &_footer{
+        z-index: 1;
+    }
+    &__shape1,
+    &__shape2,
+    &__shape3,
+    &__shape4 {
+        position: relative;
+        height:100%;
+    }
+    &__rect1{
+        &::before {
+            @extend %rectangle;
+            top: 302px;
+            left: -101px;
+            border-color: #ff5400;
+        }
+        &::after {
+            @extend %rectangle;
+            bottom: 245px;
+            left: 390px;
+            border-color: #574cba;
+        }
+    }
+    &__rect2{
+        &::after {
+            @extend %rectangle;
+            top: 226px;
+            right: -172px;
+            border-color: #4fc445;
+        }
+    }
+    &__rect3{
+        &::after {
+            @extend %rectangle;
+            bottom: 55px;
+            right: -193px;
+            border-color: #f24cae;
+        }
+        &::before {
+            @extend %rectangle;
+            bottom: 305px;
+            left: 0;
+            border-color: #574cba;
+        }
+    }
+    &__rect4{
+        &::before {
+            @extend %rectangle;
+            top: 60px;
+            left: 250px;
+            border-color: #ffffff;
+        }
+        &::after {
+            @extend %rectangle;
+            top: 245px;
+            right: 210px;
+            border-color: #fdca02;
+        }
+    }
+    &__rect5{
+        &::before {
+            @extend %rectangle;
+            bottom:285px;
+            left: -265px;
+            border-color: #ff5400;
+        }
+        &::after {
+            @extend %rectangle;
+            bottom: 102px;
+            right: -250px;
+            border-color: #4fc445;
+        }
+    }
+}

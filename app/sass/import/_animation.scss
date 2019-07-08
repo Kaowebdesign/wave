@@ -1,0 +1,19 @@
+@keyframes wave{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes backColor{
+    from{
+        box-shadow: 5px 5px 11px 0px #00000021;
+    }
+    to{
+        box-shadow: 4px 3px 20px 0px #0ed8d0b5;
+    }
+}

@@ -1,0 +1,401 @@
+.header {
+    position: relative;
+    @extend %baseBold;
+    padding-bottom: 160px;
+    overflow: hidden;
+    &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        width: 295px;
+        height:569px;
+        @include backImg('img/hd-back-1.png',auto,left);
+    }
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height:100%;
+        z-index: -101;
+        @include backImg('img/hd-back-2.png',auto,top right);
+    }
+    // &__back{
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     width: 100%;
+    //     height:100%;
+    //     z-index: -10;
+    //     @include backImg('img/hd-back-2.png',auto,top right);
+    // }
+}
+
+.logo {
+    @extend %baseTransition;
+    padding: 48px 0 100px;
+    &:hover{
+        opacity: .7;
+    }
+}
+
+.content {
+    position: relative;
+    @extend %baseFlex;
+    justify-content: space-between;
+}
+
+.hdtext {
+    position: relative;
+    max-width: 390px;
+    margin-top: 123px;
+    &__article {
+        @extend %baseRegular;
+        margin-top: 38px;
+        line-height: 1.5em;
+        font-size: (16em / $BaseFont);
+        color: $HeaderArticle;
+    }
+    &::before {
+        @extend %rectangle;
+        top: -27px;
+        left: -101px;
+        opacity: 0;
+        border-color: #ff5400;
+    }
+    
+}
+
+.hdform {
+    position: relative;
+    width: 460px;
+    height: 580px;
+    font-size: (16em / $BaseFont);
+    background: $BaseWhite;
+    box-shadow: -2px 2px 13px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    &::after {
+        @extend %rectangle;
+        bottom: 85px;
+        left: -327px;
+        opacity: 0;
+        border-color: #574cba;
+    }
+    // &::before {
+    //     content: none;
+    //     @extend %rectangle;
+    //     top: 20px;
+    //     right: -235px;
+    //     border-color: #4fc445;
+    // }
+    &_mright{
+        margin-right: 63px;
+    }
+    &_height{
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    &__content {
+        display: none;
+        &_active {
+            display: block;
+        }
+    }
+    &__container {
+        width: 283px;
+        margin: 0 auto;
+    }
+    &__thank{
+        text-align: center;
+        z-index: 1;
+        &::before{
+            content:"";
+            display: block;
+            position:absolute;
+            width: 100%;
+            height: 20%;
+            top:0;
+            left: 0;
+            border-radius: 10px;
+            @include backImg('img/quotes-back-2.png',100%,bottom);
+        }
+    }
+    &__thank-wrap{
+        position: relative;
+        @extend %baseFlex;
+        @extend %flexFullCenter;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        @include backImg('img/pack-back.png',80%,center);
+        background-position-y: 55%;
+        &::after{
+            content:"";
+            display: block;
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,.4);
+        }
+        &::before{
+            content:"";
+            display:block;
+            width: 100%;
+            height: 40%;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            opacity: .6;
+            border-radius: 10px;
+            @include backImg('img/fback-2.png',100%,bottom);
+        }
+    }
+    &__thank-capt{
+        font-size: (32em / 16);
+    }
+    &__thank-text{
+        font-size: (18em / 16);
+        text-shadow: #fff 0px 0px 15px;
+    }
+}
+
+.progressbar {
+    @extend %baseFlex;
+    @extend %flexCenter;
+    @extend %nullList;
+    color: $BaseWhite;
+    position: relative;
+    z-index: 10;
+    padding-top: 40px;
+    &__item {
+        @extend %baseFlex;
+        @extend %flexFullCenter;
+        position: relative;
+        display: inline;
+        border-radius: 100%;
+        width: 28px;
+        height: 28px;
+        margin: 10px;
+        background-color: $Steps;
+        &_active{
+            background-color: $StepsActive;
+        }
+    }
+    &__line{
+        position: absolute;
+        display: block;
+        width: 22px;
+        right: -21px;
+        height: 7px;
+        z-index: -1;
+        background-color:$Steps;
+        &_active{
+            background-color: $StepsActive;
+        }
+    }
+}
+
+.form {
+    width: 280px;
+    margin: 0 auto;
+    &__wrap {
+        margin-top: 12px;
+        &_mtop{
+            margin-top: 22px; 
+        }
+    }
+    &__selwrap{
+        @extend %basePosition; 
+        background-color: $BaseWhite;
+        &::after{
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 50%;
+            transform: translateX(-50%);
+            right: 10px;
+            z-index: -1;
+            opacity: .15;
+            @include backImg('img/down-arrow.png',cover,center);
+        }
+    }
+    &__select {
+        @extend %baseTransition;
+        @extend %formSelect;
+        @extend %nullInputs;
+        cursor: pointer;
+        color: $HeaderArticle;
+        padding: 10px 30px 10px 18px;
+        margin-top: 10px;
+        overflow: hidden;
+        appearance: none;
+        background-color: transparent;
+        // background: url('img/downArrow.png') 96% no-repeat #eee;
+        &::-ms-expand {
+            display: none;
+        }
+    }
+    &__input {
+        @extend %formSelect;
+        @extend %nullInputs;
+        margin-top: 10px;
+    }
+    &__option {
+        @extend %formSelect;
+    }
+    &__submit {
+        @extend %linkBtn;
+        cursor: pointer;
+        outline: none;
+        display: block;
+        padding: 15.5px 0;
+        background-color: $LinkColor;
+        margin-top: 40px;
+    }
+}
+
+.formlist {
+    position: relative;
+    text-align: center;
+    padding-top: 40px;
+    &__container {
+        position: relative;
+        width: 283px;
+        margin: 0 auto;
+        padding: 30px 0 60px;
+    }
+    &__titleWrap {
+        background-color: $BaseWhite;
+        max-width: 220px;
+        margin: 0 auto;
+    }
+    &__title {
+        overflow: hidden;
+    }
+    &__line {
+        width: 100%;
+        height: 1px;
+        background-color: $LineColor;
+        margin-bottom: -10px;
+    }
+    &__items {
+        @extend %baseFlex;
+        justify-content: space-between;
+        @extend %nullList;
+    }
+    &__text {
+        @extend %baseRegular;
+        font-size: (14em / $BaseFont);
+        margin-top: 15px;
+    }
+    &__item:nth-child(2) {
+        width: 50%;
+    }
+}
+
+.search {
+    @extend %yellowRactangle;
+    top: 137px;
+    left: -62px;
+    z-index: 1;
+}
+
+.shape {
+    @extend %baseFlex;
+    @extend %flexCenter;
+    position: absolute;
+    left: -135px;
+    bottom: 140px;
+    width: 140px;
+    height: 140px;
+    border-radius: 9px;
+    z-index: -1;
+    align-items: flex-end;
+    box-shadow: 11px 6px 60px 0px rgba(0, 0, 0, 0.25);
+    background: $BaseWhite;
+}
+
+.rectangle {
+    position: absolute;
+    right: -63px;
+    top: 173px;
+    z-index: -1;
+    width: 180px;
+    height: 140px;
+    background: $BaseWhite;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0px -1px 10px 0px rgba(0, 0, 0, 0.21);
+    &__top {
+        width: 100%;
+        height: 32px;
+        background: $FormRect;
+    }
+    &__lines {
+        @extend %nullList;
+        padding: 22px 28px 0;
+    }
+    &__line {
+        display: block;
+        width: 100%;
+        height: 10px;
+        border-radius: 5px;
+        margin-bottom: 12px;
+        background: $FormRect;
+    }
+}
+
+.diagram {
+    @extend %baseFlex;
+    @extend %flexFullCenter;
+    position: absolute;
+    bottom: 109px;
+    right: -145px;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: rgb( 87, 76, 186);
+    box-shadow: 0px 20px 60px 0px rgba(87, 76, 186, 0.3);
+    z-index: 91;
+}
+
+.linkBtn {
+    @extend %linkBtn;
+    @extend %baseTransition;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    padding: 15.5px 0;
+    background-color: $LinkColor;
+    margin-top: 24px;
+    &:hover{
+        box-shadow: 0px 20px 30px 0px rgba(255, 84, 0, 0.2);
+    }
+}
+
+.avatar {
+    @extend %baseFlex;
+    font-size: (14em / $BaseFont);
+    padding-top: 30px;
+    &__imgWrap {
+        margin: 10px 15px 0 0;
+    }
+    &__img {
+        border-radius: 17px;
+        max-width: 80px;
+    }
+    &__text {
+        @extend %baseRegular;
+        line-height: 20px;
+    }
+}
+

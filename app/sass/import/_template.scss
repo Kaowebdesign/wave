@@ -1,0 +1,221 @@
+.container {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+.caption {
+    @extend %baseBold;
+    font-size: (48em / $BaseFont);
+    margin-bottom: 30px;
+    color: $HeaderArticle;
+    &_package{
+        padding-right:35px;
+    }
+    &_footer{
+        margin-bottom: 10px;
+    }
+    &_small{
+        line-height: 1em;
+    }
+    &__line {
+        @extend %basePosition;
+        &::after {
+            @extend %wordBackLine;
+            background-color: $HeaderLine;
+        }
+        &_sm{
+            &::after{
+                margin-top: -17px !important;
+            }
+        }
+        &-pink::after {
+            background-color: $HeaderLine;
+        }
+        &-blue::after {
+            background-color: $howworkLine;
+        }
+        &-violet::after {
+            background-color: $quotesLine;
+        }
+        &-rose::after {
+            background-color: $packegeLine;
+        }
+        &-yellow::after {
+            background-color: $caseLine;
+            width: 87% !important;
+        }
+        &-green::after {
+            background-color: $testimonialsLine;
+        }
+    }
+}
+
+.vdots{
+    @extend %textCenter;
+    &__item{
+        width: 12px;
+        height: 12px;
+        border-radius: 4px;
+        margin: 10px;  
+        background-color: #cbcbcb;  
+        outline: none;
+        cursor: pointer;
+    }
+    .active{
+        width: 15px;
+        height: 15px;
+        border-radius: 6px;
+        background-color: rgb(255, 84, 0);
+    }
+}
+
+.vnav{
+    @extend %baseFlex;
+    justify-content: space-between;
+    position: absolute;
+    top:43%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: -1;
+    &__item{
+        background: transparent;
+        outline: none;
+        cursor:pointer;
+        &:hover{
+            opacity: .6;
+        }
+    }
+    &_left{
+        margin-left: -68px;
+    }
+    &_right{
+        margin-right: -68px;
+    }
+}
+
+%nullLink {
+    text-decoration: none;
+}
+
+%nullList {
+    list-style: none;
+}
+
+%nullInputs {
+    outline: none;
+}
+
+%baseFlex {
+    display: flex;
+}
+
+%flexFullCenter {
+    justify-content: center;
+    align-items: center;
+}
+
+%flexCenter {
+    justify-content: center;
+}
+
+%baseRegular {
+    font-family: Cabin-Regular;
+}
+
+%baseBold {
+    font-family: Cabin-Bold;
+}
+
+%linkBtn {
+    @extend %nullLink;
+    font-size: (18em/$BaseFont);
+    width: 100%;
+    text-align: center;
+    color: $BaseWhite;
+    border-radius: 25px;
+    box-shadow: 0px 2px 12px 2px #00000033;
+}
+
+%formSelect {
+    @extend %baseTransition;
+    width: 100%;
+    height: 48px;
+    padding-left: 18px;
+    border-width: 1px;
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-radius: 5px;
+    &:hover{
+        box-shadow: 0px 0px 40px #00000045; 
+    }
+    // background-color: rgb( 255, 255, 255);
+}
+
+%rectangle {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    z-index: 78;
+    border-width: 8px;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+%textCenter {
+    text-align: center;
+}
+
+%basePosition {
+    position: relative;
+    z-index: 1;
+}
+
+%baseMargin{
+    margin: 0 auto;
+}
+
+%baseTransition{
+    transition: .3s;
+}
+
+%wordBackLine {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 3px;
+    width: 97%;
+    height: 10px;
+    margin-top: -22px;
+    z-index: -1;
+}
+
+%wordBackNum {
+    @extend %baseBold;
+    font-size: (48em / $BaseFont);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -100%;
+    z-index: -1;
+}
+
+%yellowRactangle {
+    @extend %baseFlex;
+    @extend %flexFullCenter;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: $SearchColor;
+    border-radius: 19px;
+    box-shadow: 0px 20px 60px 0px rgba(255, 204, 0, 0.6);
+}
+//animation
+.wave{
+    animation-name: wave;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    transform: translateY(0px);
+}
